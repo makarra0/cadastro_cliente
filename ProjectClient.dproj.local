@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/07/01 13:21:38.000.748,=C:\Users\marcos.valverde\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/07/01 13:28:42.000.663,D:\projeto delphi\UnitClient.dfm=C:\Users\marcos.valverde\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2021/07/01 13:28:42.000.663,D:\projeto delphi\UnitClient.pas=C:\Users\marcos.valverde\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/07/01 13:29:09.000.011,D:\projeto delphi\ProjectClient.dproj=C:\Users\marcos.valverde\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2021/07/04 07:53:02.614,=D:\projeto delphi\Cliente_Project\ViaCEP.Core.pas</Transaction>
+    <Transaction>2021/07/04 07:53:14.465,=D:\projeto delphi\Cliente_Project\ViaCEP.Intf.pas</Transaction>
+    <Transaction>2021/07/04 07:53:25.403,=D:\projeto delphi\Cliente_Project\ViaCEP.Model.pas</Transaction>
+    <Transaction>2021/07/04 09:14:22.302,=D:\projeto delphi\Cliente_Project\Unit1.pas</Transaction>
+    <Transaction>2021/07/04 09:14:52.374,D:\projeto delphi\Cliente_Project\UnitFunction.pas=D:\projeto delphi\Cliente_Project\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>
