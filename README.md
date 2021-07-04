@@ -4,6 +4,8 @@ Aplicativo simples para cadastro de cliente, com geração um arquivo XML com os
 Desenvolvido com Delphi 10.3 utilizando componentes nativos
 Para a consulta de CEP para o endereço foi utilizado o ViaCep, biblioteca para consulta de cep
 
+Ao baixar o projeto copiar os arquivos ssleay32.dll e libeay32.dll para pasta onde se o executavel do sistema.
+
 Funcionalidades no cadastro do Cliente:
 
 1 - Validação de CPF
