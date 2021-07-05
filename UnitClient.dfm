@@ -2801,13 +2801,14 @@ object frm_Cliente: Tfrm_Cliente
       Tag = 1
       Left = 151
       Top = 84
-      Width = 109
+      Width = 101
       Height = 21
       Hint = 'Telefone'
       EditMask = '\(00\) 0 0000\-9999;0; '
       MaxLength = 16
       TabOrder = 3
       Text = ''
+      OnExit = msk_TelefoneExit
     end
     object edt_Email: TEdit
       Tag = 1
@@ -2819,6 +2820,7 @@ object frm_Cliente: Tfrm_Cliente
       CharCase = ecLowerCase
       MaxLength = 50
       TabOrder = 4
+      OnExit = edt_EmailExit
     end
   end
   object gpb_InformacaoResidencial: TGroupBox
@@ -2925,6 +2927,7 @@ object frm_Cliente: Tfrm_Cliente
       Hint = 'Numero'
       MaxLength = 10
       TabOrder = 2
+      OnExit = edt_NumeroExit
     end
     object edt_Complemento: TEdit
       Left = 403
@@ -3089,6 +3092,7 @@ object frm_Cliente: Tfrm_Cliente
       CharCase = ecLowerCase
       MaxLength = 50
       TabOrder = 5
+      OnExit = edt_EmailDestinatarioExit
     end
     object edt_LoginEmail: TEdit
       Left = 8

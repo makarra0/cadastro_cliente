@@ -73,6 +73,10 @@ type
     function isValidEmail: boolean;
     function SendEmail(const AEmitente, AAssunto, ADestino, AAnexo: String; ACorpo: TStrings): Boolean;
     procedure FormDestroy(Sender: TObject);
+    procedure edt_NumeroExit(Sender: TObject);
+    procedure edt_EmailExit(Sender: TObject);
+    procedure edt_EmailDestinatarioExit(Sender: TObject);
+    procedure msk_TelefoneExit(Sender: TObject);
 
 
   private
@@ -145,11 +149,11 @@ begin
   if Length( edt_EmailDestinatario.Text ) < 5 then
     Result := false;
 
-  if not fileexists(ExtractFilePath(Application.ExeName)+'libeay32.dll') then
+ { if not fileexists(ExtractFilePath(Application.ExeName)+'libeay32.dll') then
     Result := false;
 
   if not fileexists(ExtractFilePath(Application.ExeName)+'ssleay32.dll') then
-    Result := false;
+    Result := false;}
 end;
 
 procedure Tfrm_Cliente.BitBtn1Click(Sender: TObject);
@@ -234,10 +238,32 @@ begin
     gpb_ConfiguraEmail.Height := 60;
 end;
 
+procedure Tfrm_Cliente.edt_EmailDestinatarioExit(Sender: TObject);
+begin
+  if not ValidarEmail(edt_EmailDestinatario.Text) then
+  begin
+    ShowMessage('E-mail incorreto, Favor verificar!');
+  end;
+end;
+
+procedure Tfrm_Cliente.edt_EmailExit(Sender: TObject);
+begin
+  if not ValidarEmail(edt_Email.Text) then
+  begin
+    ShowMessage('E-mail incorreto, Favor verificar!');
+  end;
+end;
+
 procedure Tfrm_Cliente.edt_IdentidadeKeyPress(Sender: TObject; var Key: Char);
 begin
   if ((key in ['0'..'9'] = false) and (word(key) <> vk_back)) then
     key := #0;
+end;
+
+procedure Tfrm_Cliente.edt_NumeroExit(Sender: TObject);
+begin
+  if Trim(edt_Numero.Text) = '' then
+    edt_Numero.Text := 'S/N';
 end;
 
 procedure Tfrm_Cliente.edt_SendPortExit(Sender: TObject);
@@ -347,6 +373,13 @@ begin
     end
     else
       messagedlg('CEP invádilo.', mtwarning, [mbok], 0);
+  end
+  else
+  begin
+    if Length(edt_EmailDestinatario.Text) < 11 then
+    begin
+      ShowMessage('Número de telefone invalido, Favor verificar!');
+    end;
   end;
 end;
 
@@ -359,6 +392,14 @@ begin
       msk_Cpf.clear;
       MessageDlg('Favor verificar CPF INVÁLIDO.', mtwarning, [mbok], 0);
     end;
+  end;
+end;
+
+procedure Tfrm_Cliente.msk_TelefoneExit(Sender: TObject);
+begin
+  if Length(msk_Telefone.Text) < 11 then
+  begin
+    ShowMessage('Número de telefone invalido, Favor verificar!');
   end;
 end;
 

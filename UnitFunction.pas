@@ -7,8 +7,23 @@ interface
 
 
   procedure isValidField(Form: TForm);
+  function ValidarEMail(aStr: string): Boolean;
 
 implementation
+
+
+function ValidarEMail(aStr: string): Boolean;
+begin
+  aStr := Trim(UpperCase(aStr));
+
+  if Pos('@', aStr) > 1 then
+  begin
+    Delete(aStr, 1, pos('@', aStr));
+    Result := (Length(aStr) > 0) and (Pos('.', aStr) > 2);
+  end
+  else
+    Result := False;
+end;
 
 procedure isValidField(Form: TForm);
 var I: Integer;
