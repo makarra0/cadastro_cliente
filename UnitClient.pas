@@ -385,14 +385,16 @@ end;
 
 procedure Tfrm_Cliente.msk_CpfExit(Sender: TObject);
 begin
-  if msk_Cpf.Text <> '' then
+  if (msk_Cpf.Text <> '') and (Length(msk_Cpf.Text) = 11) then
   begin
-    if not isValidCPF( msk_Cpf.Text ) then
+    if not isValidCPF( msk_Cpf.Text )  then
     begin
       msk_Cpf.clear;
       MessageDlg('Favor verificar CPF INVÁLIDO.', mtwarning, [mbok], 0);
     end;
-  end;
+  end
+  else
+    MessageDlg('Campo obrigatório, CPF INVÁLIDO.', mtwarning, [mbok], 0);
 end;
 
 procedure Tfrm_Cliente.msk_TelefoneExit(Sender: TObject);
